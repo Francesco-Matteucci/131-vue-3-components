@@ -1,30 +1,32 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
+<script>
+// 1. importo il componente dai component
+import AppHeader from './components/AppHeader.vue'; // let AppHeader = quelloCheTroviDentro(AppHeader)
+import AppMain from './components/AppMain.vue';
+
+export default {
+  data() {
+    return {
+      count: 0
+    }
+  },
+  components: {
+    // 2. lo importo nella listab dei componenti del mio componente
+  AppHeader,
+  AppMain,
+},
+  methods: {},
+  computed: {},
+  mounted() {},
+}
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+   <!-- 3. inserisco il mio componente dove voglio sia visibile -->
+  <AppHeader />
+  <AppMain />
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
+<!-- se lo style è scoped rimane esclusivamente applicabile al template stesso -->
+<style scoped> 
+
 </style>
